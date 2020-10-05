@@ -33,7 +33,7 @@
 //.Count() does not need a delegate, it counts occurances
 
 //bad example of using aggregate, aggregate is against a single row
-from x in Tracks //x us a single, not collection, cannot use avg
+from x in Tracks //x is a single, not collection, cannot use avg
 select new
 	{
 		Name=x.Name,
@@ -52,7 +52,7 @@ Tracks.Average(x=>x.Milliseconds)   //method syntax
 
 
 //List all albums showing the title, artist name and very aggregate values
-//for albums containing traccks. For each albums, show number of tracks, the longest track length, the shortest track length, the total price of the tracks, and the average track length
+//for albums containing tracks. For each albums, show number of tracks, the longest track length, the shortest track length, the total price of the tracks, and the average track length
 
 from x in Albums
 where x.Tracks.Count()>1
