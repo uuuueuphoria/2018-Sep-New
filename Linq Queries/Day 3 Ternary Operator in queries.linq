@@ -19,7 +19,7 @@ else
 	false path complex logic
 }
 //ternary operator
-condition(s)/true value : false value
+condition(s)?true value : false value
 
 //nested ternary operator
 conition(s)? 
