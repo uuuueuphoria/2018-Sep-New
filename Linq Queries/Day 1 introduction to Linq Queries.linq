@@ -9,7 +9,7 @@
   </Connection>
 </Query>
 
-//connents are entered as C# comments
+//comments are entered as C# comments
 
 //hotkeys for comments control + k, c
 //control + k u   uncomment
