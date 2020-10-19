@@ -152,7 +152,6 @@ C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\WebApp\bin\Microsoft.CodeD
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\WebApp\bin\Microsoft.Owin.xml
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\WebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\WebApp\bin\Microsoft.Owin.Security.xml
-C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\WebApp\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\WebApp\bin\Microsoft.Owin.Security.Facebook.xml
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\WebApp\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml

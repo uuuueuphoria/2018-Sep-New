@@ -115,6 +115,10 @@
                                         style="color:black" runat="server">
                                    GridView ODS</a>
                                 <a class="dropdown-item"
+                                        href="~/SamplePages/ODSRepeater.aspx"
+                                        style="color:black" runat="server">
+                                   Repeater using nested control</a>
+                                <a class="dropdown-item"
                                         href="~/SamplePages/LinqPadToAppQuery.aspx"
                                         style="color:black" runat="server">
                                    Move LinqPad query to web app</a>
