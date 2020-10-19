@@ -36,9 +36,7 @@
                     <h5>Owner: <%#Item.UserName %></h5>
                     <%-- the internal list on each record in the ODS --%>
                     <%-- gridview --%>
-                    <%--<asp:GridView ID="PlayListSong" runat="server" DataSource="<%#Item.Songs %>" CssClass="table">--%>
-
-<%--                    </asp:GridView>--%>
+                    <asp:GridView ID="PlayListSong" runat="server" DataSource="<%#Item.Songs %>" CssClass="table"></asp:GridView>
                     <%--<asp:ListView ID="PlayListSongs" runat="server"DataSource="<%#Item.Songs %>" ItemType="ChinookSystem.ViewModels.PlayListSong">
                         <ItemTemplate>
                          <span style="background-color:silver">
