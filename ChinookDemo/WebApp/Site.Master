@@ -122,6 +122,10 @@
                                         href="~/SamplePages/LinqPadToAppQuery.aspx"
                                         style="color:black" runat="server">
                                    Move LinqPad query to web app</a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/ManagePlaylist.aspx"
+                                        style="color:black" runat="server">
+                                  OLTP Sample Manage Play List</a>
                             </div>
                          </li>
                          <li class="nav-item">
