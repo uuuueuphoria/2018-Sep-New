@@ -11,7 +11,9 @@
     <h1>Manage Playlists (UI/UX TRX Sample)</h1>
 </div>
     <div class="row">
-        <div class="offset-1"><uc1:messageusercontrol runat="server" id="MessageUserControl" /></div> 
+        <div class="offset-1">
+            <uc1:messageusercontrol runat="server" id="MessageUserControl" />
+        </div> 
     </div>
     <div class="row">
     <div class="col-sm-2">
@@ -50,8 +52,7 @@
         <asp:Label ID="SearchArg" runat="server" ></asp:Label><br />
         <asp:ListView ID="TracksSelectionList" runat="server"
             DataSourceID="TrackSelectionListODS"
-            OnItemCommand="TracksSelectionList_ItemCommand"
-             >
+            OnItemCommand="TracksSelectionList_ItemCommand">
             <AlternatingItemTemplate>
                 <tr style="background-color: #FFFFFF; color: #284775;">
                     <td>
@@ -236,20 +237,16 @@
                 PropertyName="Text"
                 Name="tracksby" 
                 Type="String">
-
             </asp:ControlParameter>
             <asp:ControlParameter ControlID="SearchArg" 
                 PropertyName="Text"
                 Name="arg" Type="String" >
-
             </asp:ControlParameter>       
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="MediaTypeDLLODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="List_MediaTypeNames" OnSelected="SelectCheckForException"
   TypeName="ChinookSystem.BLL.MediaTypeController">
     </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="GenreDDLODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="List_GenreNames" 
-OnSelected="SelectCheckForException" TypeName="ChinookSystem.BLL.GenreController">
-
+    <asp:ObjectDataSource ID="GenreDDLODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="List_GenreNames" OnSelected="SelectCheckForException" TypeName="ChinookSystem.BLL.GenreController">
     </asp:ObjectDataSource>
 </asp:Content>

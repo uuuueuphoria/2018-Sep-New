@@ -21,19 +21,22 @@ namespace WebApp.SamplePages
         }
 
         /// your MessageUsercontrol ODS methods go here
-protected void SelectCheckForException(object sender,                                       ObjectDataSourceStatusEventArgs e)
-     {          MessageUserControl.HandleDataBoundException(e);
+    protected void SelectCheckForException(object sender,                                       ObjectDataSourceStatusEventArgs e)
+        {        
+            MessageUserControl.HandleDataBoundException(e);
         }
-protected void InsertCheckForException(object sender,                                           ObjectDataSourceStatusEventArgs e)
+    protected void InsertCheckForException(object sender,                                           ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception == null)
             {
                 MessageUserControl.ShowInfo("Success", "Album has been added.");
             }
-            else      {MessageUserControl.HandleDataBoundException(e);
+            else
+            {
+                MessageUserControl.HandleDataBoundException(e);
             }
         }
-protected void UpdateCheckForException(object sender,                                        ObjectDataSourceStatusEventArgs e)
+    protected void UpdateCheckForException(object sender,                                        ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception == null)
             {
@@ -44,14 +47,15 @@ protected void UpdateCheckForException(object sender,                           
                 MessageUserControl.HandleDataBoundException(e);
             }
         }
-        protected void DeleteCheckForException(object sender,
-                                                ObjectDataSourceStatusEventArgs e)
+        protected void DeleteCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception == null)
             {
                 MessageUserControl.ShowInfo("Success", "Album has been removed.");
             }
-            else          {MessageUserControl.HandleDataBoundException(e);
+            else          
+            {
+                MessageUserControl.HandleDataBoundException(e);
             }
         }
 
@@ -68,8 +72,6 @@ protected void UpdateCheckForException(object sender,                           
                 TracksBy.Text = "Artist";
                 SearchArg.Text = ArtistName.Text;
                 //to force the listview to rebind to execute again
-
-
           }
 
         protected void MediaTypeFetch_Click(object sender, EventArgs e)
@@ -88,7 +90,7 @@ protected void UpdateCheckForException(object sender,                           
 
         protected void AlbumFetch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ArtistName.Text))
+            if (string.IsNullOrEmpty(AlbumTitle.Text))
             {
                 MessageUserControl.ShowInfo("Search entry error", "Enter a album title or partial album title, then press your button.");
                 SearchArg.Text = "dddfgg";
