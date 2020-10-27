@@ -213,7 +213,7 @@
                     <ItemTemplate>
                           
                         <asp:Label runat="server" ID="UnitPrice"
-                            Text='<%# Eval("UnitPrice") %>'></asp:Label>
+                            Text='<%# string.Format("{0:0.00}",Eval("UnitPrice")) %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -235,12 +235,15 @@
         <SelectParameters>
             <asp:ControlParameter ControlID="TracksBy" 
                 PropertyName="Text"
-                Name="tracksby" 
+                Name="tracksby"
+                DefaultValue="none"
                 Type="String">
             </asp:ControlParameter>
             <asp:ControlParameter ControlID="SearchArg" 
                 PropertyName="Text"
-                Name="arg" Type="String" >
+                Name="arg" 
+                DefaultValue="none"
+                Type="String" >
             </asp:ControlParameter>       
         </SelectParameters>
     </asp:ObjectDataSource>

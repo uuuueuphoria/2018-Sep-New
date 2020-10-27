@@ -9,6 +9,8 @@ using System.Web.UI.WebControls;
 using ChinookSystem.BLL;
 using ChinookSystem.ViewModels;
 using ChinookSystem.Entities;
+using System.Globalization;
+using System.Web.Services.Description;
 #endregion
 
 namespace WebApp.SamplePages
@@ -21,11 +23,11 @@ namespace WebApp.SamplePages
         }
 
         /// your MessageUsercontrol ODS methods go here
-    protected void SelectCheckForException(object sender,                                       ObjectDataSourceStatusEventArgs e)
-        {        
+        protected void SelectCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+        {
             MessageUserControl.HandleDataBoundException(e);
         }
-    protected void InsertCheckForException(object sender,                                           ObjectDataSourceStatusEventArgs e)
+        protected void InsertCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception == null)
             {
@@ -36,7 +38,7 @@ namespace WebApp.SamplePages
                 MessageUserControl.HandleDataBoundException(e);
             }
         }
-    protected void UpdateCheckForException(object sender,                                        ObjectDataSourceStatusEventArgs e)
+        protected void UpdateCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception == null)
             {
@@ -53,7 +55,7 @@ namespace WebApp.SamplePages
             {
                 MessageUserControl.ShowInfo("Success", "Album has been removed.");
             }
-            else          
+            else
             {
                 MessageUserControl.HandleDataBoundException(e);
             }
@@ -69,22 +71,32 @@ namespace WebApp.SamplePages
                 MessageUserControl.ShowInfo("Search entry error", "Enter a artist name or partial artist name, then press your button.");
                 SearchArg.Text = "dddfgg";
             }
-                TracksBy.Text = "Artist";
-                SearchArg.Text = ArtistName.Text;
-                //to force the listview to rebind to execute again
-          }
+            TracksBy.Text = "Artist";
+            SearchArg.Text = ArtistName.Text;
+            //to force the listview to rebind to execute again
+            TracksSelectionList.DataBind();
+        }
+    
 
         protected void MediaTypeFetch_Click(object sender, EventArgs e)
         {
-
-                //code to go here
-
+            TracksBy.Text = "MediaType";
+            SearchArg.Text = MediaTypeDDL.SelectedValue;
+            //selected value returns contents as a string
+            //no need for valdation
+            TracksSelectionList.DataBind();
         }
+       
+
+    
 
         protected void GenreFetch_Click(object sender, EventArgs e)
         {
-
-                //code to go here
+            TracksBy.Text = "Genre";
+            SearchArg.Text = GenreDDL.SelectedValue;
+            //selected value returns contents as a string
+            //no need for valdation
+            TracksSelectionList.DataBind();
 
         }
 
@@ -102,7 +114,39 @@ namespace WebApp.SamplePages
 
         protected void PlayListFetch_Click(object sender, EventArgs e)
         {
-            //code to go here
+            //security is yet to be implemented
+            //this page needs to know the username of currently logged user
+            //temoirarily we will hard code the username
+            string username = "HansenB";
+            //validate that a string exists in the playlist name
+            if(string.IsNullOrEmpty(PlaylistName.Text))
+            {
+                MessageUserControl.ShowInfo("Missing data", "enter the playlist name.");
+            }
+            else
+            {
+                //how do we do error handling using messageUserControl if the code executing is NOT part of ODS
+                //you could use Try/Catch (but we won't)
+                //we wish to use MessageUserControl
+                //if you examine the source code for MessageUserControl, you will find embedded within the code the Try/Catch
+                //The syntax:
+                //MessageUserControl.TryRun(()=>{your code block});
+                //MessageUserControl.TryRun(()=>{your code block},"Success Title","Success message");
+                MessageUserControl.TryRun(() =>
+                {
+                    //standard lookup
+
+                    //connect to controller
+                    PlaylistTracksController sysmgr = new PlaylistTracksController();
+                    //issue the controller call
+                    List<UserPlaylistTrack> info = sysmgr.List_TracksForPlaylist(PlaylistName.Text, username);
+                    //assign the results to the control
+                    PlayList.DataSource = info;
+                    //bind results to control
+                    PlayList.DataBind();
+                },"Playlist","View the current songs on the playlist");
+                
+            }
  
         }
 

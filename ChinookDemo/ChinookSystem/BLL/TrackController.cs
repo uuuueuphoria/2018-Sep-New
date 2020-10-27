@@ -71,12 +71,71 @@ namespace ChinookSystem.BLL
         {
             using (var context = new ChinookSystemContext())
             {
+				//var results = from x in context.Tracks
+				//		  where (x.Album.Artist.Name.Contains(arg) && tracksby.Equals("Artists"))||(x.Album.Title.Contains(arg)&&tracksby.Equals("Album"))
+				//		  orderby  x.Name
+				//		  select new TrackList
+				//		  {
+				//			  TrackID = x.TrackId,
+				//			  Name = x.Name,
+				//			  Title = x.Album.Title,
+				//			  ArtistName = x.Album.Artist.Name,
+				//			  MediaName = x.MediaType.Name,
+				//			  GenreName = x.Genre.Name,
+				//			  Composer = x.Composer,
+				//			  Milliseconds = x.Milliseconds,
+				//			  Bytes = x.Bytes,
+				//			  UnitPrice = x.UnitPrice
+				//		  };
+				//return results.ToList();
 				IEnumerable<TrackList> results = null;
 				if (tracksby.Equals("Artist"))
 				{
 					results = from x in context.Tracks
-							  where x.Album.Artist.Name.Contains(arg) 
-							  orderby x.Album.Artist.Name,x.Name
+							  where x.Album.Artist.Name.Contains(arg)
+							  orderby x.Album.Artist.Name, x.Name
+							  select new TrackList
+							  {
+								  TrackID = x.TrackId,
+								  Name = x.Name,
+								  Title = x.Album.Title,
+								  ArtistName = x.Album.Artist.Name,
+								  MediaName = x.MediaType.Name,
+								  GenreName = x.Genre.Name,
+								  Composer = x.Composer,
+								  Milliseconds = x.Milliseconds,
+								  Bytes = x.Bytes,
+								  UnitPrice = x.UnitPrice
+							  };
+					return results.ToList();
+				}
+				else if (tracksby.Equals("MediaType"))
+				{
+					int narg = int.Parse(arg);
+					results = from x in context.Tracks
+							  where x.MediaTypeId == narg
+							  orderby x.Name
+							  select new TrackList
+							  {
+								  TrackID = x.TrackId,
+								  Name = x.Name,
+								  Title = x.Album.Title,
+								  ArtistName = x.Album.Artist.Name,
+								  MediaName = x.MediaType.Name,
+								  GenreName = x.Genre.Name,
+								  Composer = x.Composer,
+								  Milliseconds = x.Milliseconds,
+								  Bytes = x.Bytes,
+								  UnitPrice = x.UnitPrice
+							  };
+					return results.ToList();
+				}
+				else if (tracksby.Equals("Genre"))
+				{
+					int narg = int.Parse(arg);
+					results = from x in context.Tracks
+							  where x.GenreId == narg
+							  orderby x.Name
 							  select new TrackList
 							  {
 								  TrackID = x.TrackId,
@@ -110,9 +169,19 @@ namespace ChinookSystem.BLL
 								  Bytes = x.Bytes,
 								  UnitPrice = x.UnitPrice
 							  };
-					return results.ToList();
+					if (results==null)
+					{
+						return null;
+					}
+					else
+					{
+						return results.ToList();
+					}
+					
 				}
-			
+					
+				
+
 			}
         }//eom
     }
