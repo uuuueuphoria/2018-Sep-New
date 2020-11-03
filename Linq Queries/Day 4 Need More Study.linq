@@ -47,7 +47,8 @@ var almeida = (from x in PlaylistTracks
 				{
 					song=x.Track.Name,
 					genre=x.Track.Genre.Name,
-					id=x.TrackId}).Distinct().OrderBy(x=>x.song);
+					id=x.TrackId
+				}).Distinct().OrderBy(x=>x.song);
 //almeida.Dump();
 
 var brooks = (from x in PlaylistTracks
@@ -56,7 +57,8 @@ var brooks = (from x in PlaylistTracks
 				{
 					song=x.Track.Name,
 					genre=x.Track.Genre.Name,
-					id=x.TrackId}).Distinct().OrderBy(x=>x.song);
+					id=x.TrackId
+				}).Distinct().OrderBy(x=>x.song);
 //brooks.Dump();
 
 //start with the comparisons

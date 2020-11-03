@@ -79,7 +79,7 @@ select new
 				{
 					title=grow.Title,
 					artist=grow.Artist.Name,
-					trackcount=grow.Tracks.Count(trk=>trk.AlbumId == grow.AlbumId)
+					trackcount=grow.Tracks.Count(trk=>trk.AlbumId == grow.AlbumId)	
 				}
 }
 
@@ -88,7 +88,7 @@ select new
 //Count tracks for the Name
 from x in Tracks
 where x.Album.ReleaseYear>2010
-group x by x.Genre.Name into gTem
+group x by x.Genre.Name into gTem  
 orderby gTem.Count()
 select new
 {
