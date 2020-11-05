@@ -21,4 +21,3 @@ C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\Ch
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.csproj.CopyComplete
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.dll
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.pdb
-C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.csprojAssemblyReference.cache
