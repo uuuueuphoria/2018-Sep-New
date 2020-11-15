@@ -21,3 +21,14 @@ C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\Ch
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.csproj.CopyComplete
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.dll
 C:\Users\Qi\Documents\GitHub\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.pdb
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\bin\Debug\ChinookSystem.dll.config
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\bin\Debug\ChinookSystem.dll
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\bin\Debug\ChinookSystem.pdb
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\bin\Debug\EntityFramework.dll
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\bin\Debug\EntityFramework.xml
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.csproj.CoreCompileInputs.cache
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.csproj.CopyComplete
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.dll
+C:\Users\Wanlun Xue\Documents\Github\2018-Sep-New\ChinookDemo\ChinookSystem\obj\Debug\ChinookSystem.pdb
